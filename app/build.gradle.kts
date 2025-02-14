@@ -1,7 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.ksp)
 }
 
 android {
@@ -56,15 +55,5 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    implementation(platform(libs.koin.bom))
-    implementation(libs.koin.android)
-    implementation(libs.koin.annotation)
-    implementation(libs.koin.ksp)
-
-    ksp((libs.koin.ksp))
-
     implementation(libs.gson)
-}
-ksp {
-    arg("KOIN_CONFIG_CHECK","true")
 }

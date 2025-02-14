@@ -4,9 +4,8 @@ import android.content.Context
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import edu.iesam.expmdmfebrero.features.collection.domain.Collection
-import org.koin.core.annotation.Single
 
-@Single
+
 class LocalCollectionDataSource(context: Context) {
     private val sharedPreferences = context.getSharedPreferences("collection_prefs", Context.MODE_PRIVATE)
     private val gson = Gson()
