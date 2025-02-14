@@ -9,12 +9,18 @@ class CollectionViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     private lateinit var binding : CollectionItemBinding
 
-    fun bind(collection: Collection, onClick: ((Collection, Boolean)->Unit)? ){
+    fun bind(collection: Collection, onClick: ((Collection, Boolean)->Unit)? , navigate:(()->Unit)?){
         binding = CollectionItemBinding.bind(itemView)
         binding.apply {
             txtCollectionName.text = collection.name
             txtCollectionDate.text = collection.creationDate
             txtCollectionDescription.text = collection.descriptionString
+
+            txtCollectionName.setOnClickListener{
+                if (navigate != null) {
+                    navigate()
+                }
+            }
 
             if(collection.favorite){
                 butonUncheked.visibility = View.GONE

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import edu.iesam.expmdmfebrero.R
 import edu.iesam.expmdmfebrero.databinding.FragmentCollectionBinding
@@ -38,7 +39,7 @@ class CollectionFragment : Fragment() {
         adapter = CollectionAdapter()
         setupObserver()
         setupBind()
-
+       adapter.navigate =  {findNavController().navigate(R.id.action_collectionFragment_to_mushroomFragment)}
         viewModel.loadCollections()
 
 
@@ -75,6 +76,7 @@ class CollectionFragment : Fragment() {
             }
            list.layoutManager = LinearLayoutManager(requireContext())
            list.adapter = adapter
+
         }
     }
 
