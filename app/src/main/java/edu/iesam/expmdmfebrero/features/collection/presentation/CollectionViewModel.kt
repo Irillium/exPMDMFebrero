@@ -7,13 +7,16 @@ import edu.iesam.expmdmfebrero.features.collection.domain.Collection
 import edu.iesam.expmdmfebrero.features.collection.domain.GetCollectionsUseCase
 import org.koin.android.annotation.KoinViewModel
 
-@KoinViewModel
+
 class CollectionViewModel(private val getCollectionsUseCase: GetCollectionsUseCase) : ViewModel() {
 
     private val _uiState = MutableLiveData<UiState>()
     val uiState:LiveData<UiState> get() =  _uiState
 
-
+    fun loadCollections(){
+        val collections = getCollectionsUseCase
+        _uiState.value
+    }
 
     data class UiState(
         val isLoading:Boolean=false,
