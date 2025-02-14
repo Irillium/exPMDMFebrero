@@ -15,7 +15,7 @@
         app:title="@string/section_collections"
        />
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/butonUncheked"
+        android:id="@+id/butonChecked"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,7 +27,7 @@
         android:visibility="gone"
         />
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/butonChecked"
+        android:id="@+id/butonUncheked"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,5 +46,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         />
-
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

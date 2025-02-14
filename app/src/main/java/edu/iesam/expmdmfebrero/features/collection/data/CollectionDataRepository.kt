@@ -14,5 +14,13 @@ class CollectionDataRepository(private val local: LocalCollectionDataSource):Col
         local.saveCollections(collection)
     }
 
+    override fun deleteByName(name: String) {
+       local.removeCollectionByName(name)
+    }
+
+    override fun save(collection: Collection) {
+        local.addCollection(collection)
+    }
+
 
 }

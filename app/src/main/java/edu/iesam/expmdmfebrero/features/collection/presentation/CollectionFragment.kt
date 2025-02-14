@@ -49,6 +49,7 @@ class CollectionFragment : Fragment() {
     fun setupObserver(){
         val observer= Observer<CollectionViewModel.UiState>{ uiState ->
             uiState.collections?.let { setupView(it) }
+            uiState.onClick?.let { adapter.onClick = it  }
         }
         viewModel.uiState.observe(viewLifecycleOwner, observer)
     }
@@ -62,13 +63,14 @@ class CollectionFragment : Fragment() {
             butonUncheked.setOnClickListener(){
                 butonUncheked.visibility = View.GONE
                 butonChecked.visibility = View.VISIBLE
-                viewModel.loadCollections()
+                viewModel.loadFavoritesCollections()
             }
 
             butonChecked.setOnClickListener(){
                 butonUncheked.visibility = View.VISIBLE
                 butonChecked.visibility = View.GONE
-                viewModel.loadFavoritesCollections()
+                viewModel.loadCollections()
+
 
             }
            list.layoutManager = LinearLayoutManager(requireContext())
