@@ -12,6 +12,28 @@ class CollectionViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     fun bind(collection: Collection) {
         binding = CollectionItemBinding.bind(itemView)
+        binding.apply {
+            txtCollectionName.text = collection.name
+            txtCollectionDate.text = collection.creationDate
+            txtCollectionDescription.text = collection.descriptionString
 
+            if(collection.favorite){
+                butonUncheked.visibility = View.VISIBLE
+                butonChecked.visibility = View.GONE
+
+            }else{
+                butonUncheked.visibility = View.GONE
+                butonChecked.visibility = View.VISIBLE
+            }
+            butonUncheked.setOnClickListener(){
+                butonUncheked.visibility = View.GONE
+                butonChecked.visibility = View.VISIBLE
+            }
+
+            butonChecked.setOnClickListener(){
+                butonUncheked.visibility = View.VISIBLE
+                butonChecked.visibility = View.GONE
+            }
+        }
     }
 }

@@ -6,6 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".features.collection.presentation.CollectionFragment">
 
+
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/topAppBar"
         android:layout_width="match_parent"
@@ -13,7 +14,29 @@
         app:layout_constraintTop_toTopOf="parent"
         app:title="@string/section_collections"
        />
-
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/butonUncheked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:iconTint="@color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:iconGravity="textStart"
+        android:background="#00884477"
+        app:icon="@drawable/baseline_bookmark_24"
+        android:visibility="gone"
+        />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/butonChecked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:iconTint="@color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:iconGravity="textStart"
+        android:background="#00884477"
+        app:icon="@drawable/bookmark_24dp_e8eaed_fill0_wght400_grad0_opsz24"
+        />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list"
         android:layout_width="0dp"

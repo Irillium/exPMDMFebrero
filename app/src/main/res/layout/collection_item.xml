@@ -6,6 +6,29 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/butonUncheked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:iconTint="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:iconGravity="end"
+            android:background="#00884477"
+            app:icon="@drawable/baseline_bookmark_24"
+            android:visibility="gone"
+            />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/butonChecked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:iconTint="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:iconGravity="end"
+            android:background="#00884477"
+            app:icon="@drawable/bookmark_24dp_e8eaed_fill0_wght400_grad0_opsz24"
+            />
         <!-- Imagen de la colección -->
         <ImageView
             android:id="@+id/imgCollection"
@@ -55,5 +78,8 @@
             app:layout_constraintTop_toBottomOf="@id/txtCollectionDate"
             app:layout_constraintEnd_toEndOf="parent"
             tools:text="Esta es una descripción corta de la colección."/>
-
+<com.google.android.material.divider.MaterialDivider
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/txtCollectionDescription"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
